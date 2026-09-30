@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Briefing da cobertura ISD Recife | Be Maith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #F6F3EA;
+  --bg-2: #EFE9D9;
+  --card-from: #FBF7EC;
+  --bordo-1: #7A1F2B;
+  --bordo-2: #A6303F;
+  --bordo-sec: #8A2434;
+  --bordo-dark: #5C1420;
+  --line: rgba(110, 24, 37, 0.16);
+  --line-strong: rgba(110, 24, 37, 0.32);
+  --text: #33191E;
+  --text-dim: #6E5A55;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::after {
+  content: "";
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    radial-gradient(2px 2px at 12% 18%, rgba(122, 31, 43, 0.5), transparent 60%),
+    radial-gradient(1.5px 1.5px at 78% 12%, rgba(138, 36, 52, 0.45), transparent 60%),
+    radial-gradient(1px 1px at 32% 44%, rgba(122, 31, 43, 0.55), transparent 60%),
+    radial-gradient(1.5px 1.5px at 64% 36%, rgba(110, 24, 37, 0.5), transparent 60%),
+    radial-gradient(2px 2px at 88% 64%, rgba(138, 36, 52, 0.45), transparent 60%),
+    radial-gradient(1px 1px at 24% 78%, rgba(122, 31, 43, 0.4), transparent 60%),
+    radial-gradient(1.5px 1.5px at 52% 88%, rgba(110, 24, 37, 0.45), transparent 60%);
+  animation: lights-drift 18s ease-in-out infinite alternate;
+  opacity: 0.6;
+}
+@keyframes lights-drift {
+  0% { transform: translate3d(0,0,0) scale(1); opacity: 0.5; }
+  100% { transform: translate3d(-18px,-22px,0) scale(1.04); opacity: 0.65; }
+}
+@media (prefers-reduced-motion: reduce) { body::after { animation: none; } }
+::selection { background: rgba(110, 24, 37, 0.3); }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+.page { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 32px 24px 80px; }
+
+/* Painel bordô do topo, o mesmo do bloco de formulário do site */
+.hero {
+  background: linear-gradient(160deg, #4E0F1A 0%, #5C1420 60%, #6E1825 100%);
+  border: 1px solid var(--line-strong);
+  border-radius: 28px;
+  padding: 44px 48px 40px;
+  color: #FBF7EC;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(80% 60% at 100% 0%, rgba(246, 235, 221, 0.10) 0%, transparent 60%);
+}
+.wordmark { position: relative; display: inline-block; line-height: 1; margin-bottom: 36px; }
+.wordmark b { display: block; font-weight: 600; font-size: 22px; letter-spacing: -0.02em; }
+.wordmark span { display: block; font-size: 11px; letter-spacing: 0.2em; opacity: 0.7; margin-top: 4px; }
+.hero h1 {
+  position: relative;
+  font-weight: 500;
+  font-size: clamp(34px, 6vw, 54px);
+  line-height: 1.05;
+  letter-spacing: -0.022em;
+  margin: 0 0 18px;
+  text-wrap: balance;
+}
+.hero h1 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: #F0CFC4; }
+.hero p { position: relative; margin: 0; max-width: 56ch; color: rgba(251, 247, 236, 0.78); font-size: 16px; }
+.trip {
+  position: relative;
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: start;
+  gap: 10px 28px;
+  font-size: 14px;
+  color: rgba(251, 247, 236, 0.85);
+}
+.trip div { border-left: 1px solid rgba(246, 235, 221, 0.3); padding-left: 12px; }
+.trip strong { display: block; color: #FBF7EC; font-weight: 600; font-size: 15px; }
+
+/* Tag-label "porta aberta" do site */
+.tag-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 16px 8px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--bordo-1); font-weight: 600; white-space: nowrap;
+}
+
+/* Etapas */
+.steps { margin: 36px 0 8px; }
+.steps-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 12px; }
+.steps-meta .count { font-size: 14px; color: var(--text-dim); }
+.bar { height: 3px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--bordo-1), var(--bordo-2)); transition: width 0.4s cubic-bezier(.4,0,.2,1); }
+.step-list { display: flex; gap: 6px; margin-top: 14px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+.step-list::-webkit-scrollbar { display: none; }
+.step-list button {
+  flex: 0 0 auto;
+  font-size: 13px; padding: 6px 12px; border-radius: 8px;
+  color: var(--text-dim); border: 1px solid transparent;
+}
+.step-list button[aria-current="step"] { color: var(--bordo-1); border-color: var(--line-strong); background: rgba(255,255,255,0.7); font-weight: 600; }
+.step-list button.done { color: var(--text); }
+.step-list button:focus-visible { outline: 2px solid var(--bordo-sec); outline-offset: 2px; }
+
+/* Bloco da etapa */
+.panel {
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(120% 100% at 0% 0%, rgba(110, 24, 37, 0.05) 0%, transparent 60%),
+    linear-gradient(180deg, var(--card-from) 0%, var(--bg) 100%);
+  padding: 40px 44px;
+}
+.panel h2 { font-weight: 500; font-size: clamp(28px, 4vw, 38px); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 10px; }
+.panel h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--bordo-sec); }
+.panel .lead { color: var(--text-dim); margin: 0 0 32px; max-width: 60ch; font-size: 16px; }
+
+.q { margin-bottom: 30px; }
+.q[hidden] { display: none; }
+.q > .label { display: block; font-weight: 600; font-size: 16px; line-height: 1.4; margin-bottom: 4px; }
+.q > .hint { display: block; font-size: 14px; color: var(--text-dim); margin-bottom: 12px; }
+.q > .label + .field, .q > .label + .options { margin-top: 10px; }
+
+.field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  color: var(--text);
+  font: inherit; font-size: 15px;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+textarea.field { min-height: 110px; resize: vertical; line-height: 1.55; }
+.field:focus { border-color: var(--bordo-sec); box-shadow: 0 0 0 4px rgba(110, 24, 37, 0.08); }
+.field::placeholder { color: #A6958F; }
+
+/* Campo com rótulo flutuante (BMInput do site) */
+.float { position: relative; display: block; }
+.float span {
+  position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+  font-size: 14px; color: var(--text-dim); pointer-events: none;
+  transition: all 0.2s ease;
+}
+.float .field { padding: 22px 16px 8px; }
+.float .field:focus + span, .float .field:not(:placeholder-shown) + span {
+  top: 8px; transform: none; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bordo-sec);
+}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.grid-2 + .q { margin-top: 16px; }
+
+/* Opções */
+.options { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt { position: relative; }
+.opt input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.opt span {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 14.5px; line-height: 1.3;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.opt span::before {
+  content: ""; width: 14px; height: 14px; flex: 0 0 14px;
+  border: 1.5px solid var(--line-strong); background: #fff;
+}
+.opt input[type="radio"] + span::before { border-radius: 50%; }
+.opt input[type="checkbox"] + span::before { border-radius: 4px; }
+.opt input:checked + span { background: var(--bordo-dark); border-color: var(--bordo-dark); color: #FBF7EC; }
+.opt input:checked + span::before {
+  border-color: #FBF7EC; background: #FBF7EC;
+  box-shadow: inset 0 0 0 3px var(--bordo-dark);
+}
+.opt input:focus-visible + span { outline: 2px solid var(--bordo-sec); outline-offset: 2px; }
+.opt:hover span { border-color: var(--bordo-sec); }
+.other { margin-top: 10px; }
+
+.error-msg { color: var(--bordo-2); font-size: 14px; margin-top: 8px; }
+.q.invalid .field { border-color: var(--bordo-2); }
+
+/* Botões do site */
+.nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+.btn-cta {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 16px 20px 16px 32px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #5C1420 0%, #6E1825 100%);
+  color: #FBF7EC;
+  font-weight: 600; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  box-shadow: 0 0 0 1px rgba(122, 31, 43, 0.22) inset, 0 8px 30px -12px rgba(110, 24, 37, 0.4);
+  position: relative; overflow: hidden;
+  transition: box-shadow 0.35s cubic-bezier(.4,0,.2,1), transform 0.3s cubic-bezier(.4,0,.2,1), filter 0.3s ease;
+}
+.btn-cta::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.45) 50%, transparent 70%);
+  transform: translateX(-120%); transition: transform 0.7s ease;
+}
+.btn-cta:hover::before { transform: translateX(120%); }
+.btn-cta:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 0 0 1px rgba(122,31,43,0.45) inset, 0 16px 60px -8px rgba(138,36,52,0.55), 0 0 0 6px rgba(110,24,37,0.08); }
+.btn-cta > * { position: relative; z-index: 1; }
+.btn-cta .arrow-box { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 6px; background: rgba(246,235,221,0.18); color: #F6EBDD; }
+.btn-cta[disabled] { opacity: 0.6; pointer-events: none; }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 14px 24px; border-radius: 12px;
+  border: 1px solid var(--line-strong);
+  color: var(--text); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
+  background: rgba(255,255,255,0.55);
+  transition: all 0.25s;
+}
+.btn-ghost:hover { border-color: var(--bordo-sec); background: rgba(255,255,255,0.8); }
+.btn-ghost[hidden] { display: none; }
+.btn-cta:focus-visible, .btn-ghost:focus-visible { outline: 2px solid var(--bordo-sec); outline-offset: 3px; }
+.saved { font-size: 13px; color: var(--text-dim); margin-top: 14px; }
+
+/* Tela final */
+.done { text-align: center; padding: 56px 32px; }
+.done .check { width: 56px; height: 56px; border-radius: 50%; background: var(--bordo-sec); color: #FBF7EC; display: grid; place-items: center; margin: 0 auto 18px; }
+.done .title { font-family: var(--font-serif); font-style: italic; font-size: 32px; color: var(--bordo-sec); margin-bottom: 10px; line-height: 1.2; }
+.done p { color: var(--text-dim); max-width: 46ch; margin: 0 auto; }
+
+footer { text-align: center; font-size: 13px; color: var(--text-dim); margin-top: 40px; }
+
+@media (max-width: 700px) {
+  .page { padding: 16px 14px 64px; }
+  .hero { padding: 30px 24px 28px; border-radius: 22px; }
+  .wordmark { margin-bottom: 26px; }
+  .trip { grid-template-columns: 1fr; gap: 10px; }
+  .panel { padding: 28px 20px; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .nav { flex-direction: column-reverse; align-items: stretch; }
+  .btn-cta { justify-content: center; padding: 16px 22px; }
+  .btn-ghost { justify-content: center; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <div class="wordmark" aria-label="bemaith agência"><b>bemaith</b><span>agência</span></div>
+    <h1>Briefing da cobertura <em>ISD Recife</em></h1>
+    <p>Esse formulário é para a gente chegar no Recife entendendo o evento como você. Quanto mais detalhe, melhor sai a captação. Dá para parar no meio e voltar depois, as respostas ficam salvas neste aparelho.</p>
+    <div class="trip">
+      <div><strong>Quinta, 17h</strong>saída da equipe</div>
+      <div><strong>Sexta e sábado</strong>2 e 3 de outubro</div>
+      <div><strong>Domingo, 9h</strong>volta</div>
+    </div>
+  </header>
+
+  <div class="steps">
+    <div class="steps-meta">
+      <span class="tag-label" id="stepTag">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 1.5 L2 12.5 M2 1.5 L8 1.5 M2 12.5 L8 12.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="square"/><circle cx="6.5" cy="7" r="0.6" fill="currentColor"/></svg>
+        <span id="stepTagText"></span>
+      </span>
+      <span class="count" id="stepCount"></span>
+    </div>
+    <div class="bar"><i id="barFill"></i></div>
+    <nav class="step-list" id="stepList" aria-label="Etapas do formulário"></nav>
+  </div>
+
+  <main id="app"></main>
+
+  <footer>Be Maith Agência · contato@bemaithagencia.com</footer>
+</div>
+
+<script>
+(function () {
+  var ENDPOINT = "https://formspree.io/f/mkoynvzw";
+  var STORE_KEY = "bemaith-briefing-isd-recife-v2";
+
+  var STEPS = [
+    {
+      id: "contato", nav: "Contato",
+      title: "Quem está <em>respondendo</em>",
+      lead: "Só para a gente saber com quem está falando.",
+      fields: [
+        { id: "nome", label: "Seu nome", type: "float", required: true, half: true },
+        { id: "funcao", label: "Sua função no evento", type: "float", half: true }
+      ]
+    },
+    {
+      id: "viagem", nav: "Viagem",
+      title: "A <em>viagem</em>",
+      lead: "A equipe vai no jato com vocês. A decolagem é na quinta às 17h e a volta no domingo às 9h.",
+      fields: [
+        { id: "ida_gravar", label: "Precisamos gravar conteúdo desde a viagem de ida para postar nos stories e no feed?", type: "radio",
+          options: ["Sim, desde a ida", "Não, só a partir da chegada ao evento"] },
+        { id: "ida_quinta", label: "Se sim, que tipo de conteúdo vocês acham interessante postar na quinta, um dia antes do evento?", hint: "Como a decolagem é às 17h, não vamos gravar o dia todo. Exemplos: avisar que estão a caminho, preparação, embarque.", type: "textarea" },
+        { id: "ida_voo", label: "Se sim, o que vocês querem mostrar durante o voo de ida?", type: "textarea" },
+        { id: "ida_acesso", label: "Se sim, já vamos ter acesso ao Instagram do Wendell na quinta para postar?", type: "radio",
+          options: ["Sim", "Não", "Vamos combinar"] },
+        { id: "volta_gravar", label: "E na volta, querem algum conteúdo durante o voo, pós-evento?", type: "radio",
+          options: ["Sim", "Não"] },
+        { id: "volta_voo", label: "Se sim, o que vocês querem mostrar na volta?", type: "textarea" }
+      ]
+    },
+    {
+      id: "evento", nav: "Evento",
+      title: "O <em>evento</em>",
+      lead: "Horários, palestrantes e o que pode ou não ser gravado.",
+      fields: [
+        { id: "horario_sexta", label: "Sexta: de que horas até que horas a equipe precisa estar no local?", hint: "Não é o horário de início do evento, e sim o horário em que a equipe precisa chegar.", type: "text" },
+        { id: "horario_sabado", label: "Sábado: de que horas até que horas a equipe precisa estar no local?", type: "text" },
+        { id: "cronograma", label: "Se vocês tiverem o cronograma, mandem para a gente", hint: "Cole o link ou escreva os horários.", type: "textarea" },
+        { id: "palestrantes", label: "Quem vai palestrar, em que ordem e com quais temas?", hint: "Incluindo Wendell e Karina. Com isso a gente já deixa o conteúdo de cada palestrante preparado.", type: "textarea" },
+        { id: "bastidores", label: "A gente costuma gravar nos bastidores, antes dos palestrantes subirem ao palco, contando o que vão apresentar. Vamos ter acesso a essa área?", type: "radio",
+          options: ["Sim", "Só em horários combinados", "Não"] },
+        { id: "proibido", label: "Tem algo que é proibido gravar ou postar?", hint: "Um momento específico, uma dinâmica, um assunto que não pode ir para as redes sociais. Aqui é o lugar de avisar.", type: "textarea" }
+      ]
+    },
+    {
+      id: "conteudo", nav: "O que não pode faltar",
+      title: "O que não pode <em>faltar</em>",
+      lead: "A gente vai trazer a nossa visão e a nossa criatividade, mas queremos saber o que para vocês é indispensável. Escrevam sem economizar palavras.",
+      fields: [
+        { id: "stories_indispensavel", label: "O que não pode faltar nos stories?", hint: "Bastidores, depoimentos, algum momento específico do evento. Tudo o que vier à cabeça.", type: "textarea" },
+        { id: "feed_indispensavel", label: "O que não pode faltar no feed?", type: "textarea" },
+        { id: "tom", label: "Os stories podem ter momentos de descontração e humor, ou precisam ser mais sérios e profissionais?", type: "radio",
+          options: ["Podem ter humor e descontração", "Um pouco de cada", "Mais sérios e profissionais"] },
+        { id: "referencias", label: "Vocês têm referências de vídeos no Instagram que gostam muito?", hint: "Do próprio evento ou de outros. Cole os links, um por linha.", type: "textarea" },
+        { id: "logo", label: "Link da pasta com o logotipo do evento", hint: "Drive ou onde estiver.", type: "text" },
+        { id: "cores", label: "Tem cores prioritárias para usar nos stories do Wendell? Quais?", type: "text" },
+        { id: "tipografia", label: "Tipografia dos stories", type: "radio", other: "Se tiver fonte específica, qual?",
+          options: ["Tem uma fonte específica", "Fica a critério da Be Maith"] }
+      ]
+    },
+    {
+      id: "leads", nav: "Leads",
+      title: "Leads para o <em>comercial</em>",
+      lead: "A Karina comentou que a cobertura também precisa ter CTA e levar leads para o comercial.",
+      fields: [
+        { id: "objetivo", label: "Qual o objetivo principal com esses leads?", type: "radio", other: "Se for outro, qual?",
+          options: ["Vender a próxima edição da ISD", "Vender outro evento", "Vender um produto ou mentoria"] },
+        { id: "produto", label: "Contem para a gente sobre o produto que vai ser vendido", hint: "Se for mais de um, contem todos. Digam se ele fica disponível só por um tempo ou em um horário específico, se tem condição especial só durante o evento, se vai ter automação no ManyChat no feed e nos stories, e qual link a gente coloca nos stories (site, landing page, WhatsApp).", type: "textarea", tall: true }
+      ]
+    },
+    {
+      id: "depoimentos", nav: "Depoimentos",
+      title: "<em>Depoimentos</em>",
+      lead: "Depoimento é algo que a gente costuma captar bastante nas coberturas.",
+      fields: [
+        { id: "dep_minimo", label: "Tem uma quantidade mínima de depoimentos para gravar?", type: "radio", other: "Se tiver, quantos?",
+          options: ["Não tem mínimo", "Sim"] },
+        { id: "dep_quem", label: "Podemos gravar com qualquer participante ou tem pessoas específicas?", type: "radio",
+          options: ["Qualquer participante", "Tem pessoas específicas"] },
+        { id: "dep_nomes", label: "Se tiver pessoas específicas, quem são?", type: "textarea" },
+        { id: "dep_extrair", label: "O que vocês querem extrair dos participantes?", hint: "Assim a gente monta perguntas que levam a essa resposta. Por exemplo: resultado de vendas, como chegaram e como estão saindo, o que mais marcou.", type: "textarea" }
+      ]
+    },
+    {
+      id: "final", nav: "Dúvidas finais",
+      title: "Dúvidas <em>finais</em>",
+      lead: "Últimos detalhes para a gente fechar o planejamento.",
+      fields: [
+        { id: "musica", label: "Tem alguma música ou tipo de música para usar no feed e nos stories?", type: "textarea" },
+        { id: "bordao", label: "Tem algum bordão ou frase deste evento?", type: "textarea" },
+        { id: "roupa", label: "A equipe de filmagem precisa usar alguma cor de roupa?", type: "text" },
+        { id: "livre", label: "Algo mais que a gente precisa saber?", type: "textarea" }
+      ]
+    }
+  ];
+
+  var data = {};
+  var current = 0;
+  var sent = false;
+
+  try {
+    var saved = localStorage.getItem(STORE_KEY);
+    if (saved) {
+      var parsed = JSON.parse(saved);
+      data = parsed.data || {};
+      current = Math.min(parsed.step || 0, STEPS.length - 1);
+      sent = !!parsed.sent;
+    }
+  } catch (e) {}
+
+  function persist() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify({ data: data, step: current, sent: sent })); } catch (e) {}
+  }
+
+  var app = document.getElementById("app");
+  var stepList = document.getElementById("stepList");
+
+  function el(tag, attrs, children) {
+    var n = document.createElement(tag);
+    if (attrs) for (var k in attrs) {
+      if (k === "text") n.textContent = attrs[k];
+      else if (k === "html") n.innerHTML = attrs[k];
+      else n.setAttribute(k, attrs[k]);
+    }
+    (children || []).forEach(function (c) { if (c) n.appendChild(c); });
+    return n;
+  }
+
+  function otherKey(f) { return f.id + "_outro"; }
+
+  function renderField(f) {
+    var wrap = el("div", { "class": "q", "data-id": f.id });
+    if (f.showIf && !f.showIf(data)) wrap.hidden = true;
+
+    if (f.type === "float") {
+      var lab = el("label", { "class": "float" });
+      var inp = el("input", { "class": "field", type: "text", placeholder: " ", id: "f_" + f.id, autocomplete: "off" });
+      if (f.inputmode) inp.setAttribute("inputmode", f.inputmode);
+      inp.value = data[f.id] || "";
+      inp.addEventListener("input", function () { data[f.id] = inp.value; wrap.classList.remove("invalid"); persist(); });
+      lab.appendChild(inp);
+      lab.appendChild(el("span", { text: f.label + (f.required ? " *" : "") }));
+      wrap.appendChild(lab);
+      wrap.style.marginBottom = "0";
+      return wrap;
+    }
+
+    var labelId = "l_" + f.id;
+    wrap.appendChild(el("label", { "class": "label", id: labelId, "for": "f_" + f.id, text: f.label }));
+    if (f.hint) wrap.appendChild(el("span", { "class": "hint", text: f.hint }));
+
+    if (f.type === "text" || f.type === "textarea") {
+      var field = f.type === "text"
+        ? el("input", { "class": "field", type: "text", id: "f_" + f.id })
+        : el("textarea", { "class": "field", id: "f_" + f.id, rows: f.tall ? "9" : "4" });
+      field.value = data[f.id] || "";
+      field.addEventListener("input", function () { data[f.id] = field.value; persist(); });
+      wrap.appendChild(field);
+      return wrap;
+    }
+
+    var group = el("div", { "class": "options", role: f.type === "radio" ? "radiogroup" : "group", "aria-labelledby": labelId });
+    var opts = f.options.slice();
+    var hasOther = !!f.other;
+    if (hasOther && f.type === "check") opts.push("Outro");
+
+    opts.forEach(function (o) {
+      var id = "f_" + f.id + "_" + Math.random().toString(36).slice(2, 7);
+      var input = el("input", { type: f.type === "radio" ? "radio" : "checkbox", name: f.id, value: o, id: id });
+      if (f.type === "radio") input.checked = data[f.id] === o;
+      else input.checked = Array.isArray(data[f.id]) && data[f.id].indexOf(o) > -1;
+      input.addEventListener("change", function () {
+        if (f.type === "radio") data[f.id] = o;
+        else {
+          var arr = Array.isArray(data[f.id]) ? data[f.id].slice() : [];
+          if (input.checked) { if (arr.indexOf(o) < 0) arr.push(o); }
+          else arr = arr.filter(function (x) { return x !== o; });
+          data[f.id] = arr;
+        }
+        persist();
+        syncConditional();
+      });
+      group.appendChild(el("label", { "class": "opt", "for": id }, [input, el("span", { text: o })]));
+    });
+    wrap.appendChild(group);
+
+    if (hasOther) {
+      var ph = typeof f.other === "string" ? f.other : "Escreva aqui";
+      var ot = el("input", { "class": "field other", type: "text", placeholder: ph, "aria-label": f.label + ": " + ph });
+      ot.value = data[otherKey(f)] || "";
+      ot.addEventListener("input", function () { data[otherKey(f)] = ot.value; persist(); });
+      wrap.appendChild(ot);
+    }
+    return wrap;
+  }
+
+  function syncConditional() {
+    STEPS[current].fields.forEach(function (f) {
+      if (!f.showIf) return;
+      var node = app.querySelector('.q[data-id="' + f.id + '"]');
+      if (node) node.hidden = !f.showIf(data);
+    });
+  }
+
+  function renderNav() {
+    stepList.innerHTML = "";
+    STEPS.forEach(function (s, i) {
+      var b = el("button", { type: "button", text: s.nav });
+      if (i === current && !sent) b.setAttribute("aria-current", "step");
+      if (i < current) b.className = "done";
+      b.addEventListener("click", function () {
+        if (sent) return;
+        go(i);
+      });
+      stepList.appendChild(b);
+    });
+    document.getElementById("stepTagText").textContent = sent ? "Enviado" : "Etapa " + (current + 1) + " de " + STEPS.length;
+    document.getElementById("stepCount").textContent = sent ? "" : STEPS[current].nav;
+    document.getElementById("barFill").style.width = (sent ? 100 : ((current + 1) / STEPS.length) * 100) + "%";
+    var active = stepList.querySelector('[aria-current="step"]');
+    if (active && active.scrollIntoView) active.scrollIntoView({ block: "nearest", inline: "center" });
+  }
+
+  var ARROW = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3.5 10.5 L10.5 3.5 M5 3.5 L10.5 3.5 L10.5 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  function render() {
+    renderNav();
+    app.innerHTML = "";
+    if (sent) { renderDone(); return; }
+    var s = STEPS[current];
+    var panel = el("section", { "class": "panel", "aria-labelledby": "stepTitle" });
+    panel.appendChild(el("h2", { id: "stepTitle", html: s.title }));
+    if (s.lead) panel.appendChild(el("p", { "class": "lead", text: s.lead }));
+
+    var halfBuf = [];
+    function flushHalf() {
+      if (!halfBuf.length) return;
+      var g = el("div", { "class": "grid-2" });
+      halfBuf.forEach(function (n) { g.appendChild(n); });
+      panel.appendChild(g);
+      halfBuf = [];
+    }
+    s.fields.forEach(function (f) {
+      var node = renderField(f);
+      if (f.half) halfBuf.push(node);
+      else { flushHalf(); panel.appendChild(node); }
+    });
+    flushHalf();
+
+    var isLast = current === STEPS.length - 1;
+    var back = el("button", { type: "button", "class": "btn-ghost", text: "Voltar" });
+    if (current === 0) back.hidden = true;
+    back.addEventListener("click", function () { go(current - 1); });
+
+    var next = el("button", { type: "button", "class": "btn-cta", html: "<span>" + (isLast ? "Enviar respostas" : "Continuar") + "</span><span class=\"arrow-box\">" + ARROW + "</span>" });
+    next.addEventListener("click", function () {
+      if (!isLast) { go(current + 1); return; }
+      if (!validate()) return;
+      submit(next);
+    });
+
+    var nav = el("div", { "class": "nav" }, [back, next]);
+    panel.appendChild(nav);
+    var status = el("div", { "class": "saved", id: "status", "aria-live": "polite", text: isLast ? "Revise o que quiser nas etapas anteriores antes de enviar." : "Suas respostas ficam salvas neste aparelho enquanto você preenche." });
+    panel.appendChild(status);
+    app.appendChild(panel);
+  }
+
+  function validate() {
+    var missing = STEPS[0].fields.filter(function (f) { return f.required && !(data[f.id] || "").trim(); });
+    if (!missing.length) return true;
+    go(0);
+    var firstBad = null;
+    missing.forEach(function (f) {
+      var node = app.querySelector('.q[data-id="' + f.id + '"]');
+      if (node) { node.classList.add("invalid"); if (!firstBad) firstBad = node.querySelector("input"); }
+    });
+    var st = document.getElementById("status");
+    if (st) { st.textContent = "Falta preencher seu nome para enviar."; st.className = "error-msg"; }
+    if (firstBad) firstBad.focus();
+    return false;
+  }
+
+  function go(i) {
+    current = Math.max(0, Math.min(STEPS.length - 1, i));
+    persist();
+    render();
+    var top = document.querySelector(".steps");
+    if (top) window.scrollTo({ top: top.getBoundingClientRect().top + window.scrollY - 12, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }
+
+  function buildPayload() {
+    var out = { _subject: "Briefing cobertura ISD Recife: " + (data.nome || "sem nome") };
+    STEPS.forEach(function (s, si) {
+      s.fields.forEach(function (f) {
+        var v = data[f.id];
+        if (Array.isArray(v)) v = v.join(", ");
+        if (f.other && data[otherKey(f)]) v = (v ? v + " | " : "") + "Outro: " + data[otherKey(f)];
+        out[(si + 1) + ". " + s.nav + " | " + f.label] = v && String(v).trim() ? v : "-";
+      });
+    });
+    return out;
+  }
+
+  function submit(btn) {
+    var st = document.getElementById("status");
+    btn.setAttribute("disabled", "");
+    btn.querySelector("span").textContent = "Enviando";
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Accept": "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify(buildPayload())
+    }).then(function (res) {
+      if (res.ok) {
+        sent = true; persist(); render();
+        window.scrollTo({ top: 0, behavior: "auto" });
+        return;
+      }
+      return res.json().catch(function () { return {}; }).then(function (j) {
+        var msg = (j.errors && j.errors[0] && j.errors[0].message) || "O envio não foi concluído.";
+        fail(btn, st, msg + " Suas respostas continuam salvas, tente enviar de novo.");
+      });
+    }).catch(function () {
+      fail(btn, st, "Sem conexão agora. Suas respostas continuam salvas, tente enviar de novo quando a internet voltar.");
+    });
+  }
+
+  function fail(btn, st, msg) {
+    btn.removeAttribute("disabled");
+    btn.querySelector("span").textContent = "Enviar respostas";
+    if (st) { st.textContent = msg; st.className = "error-msg"; }
+  }
+
+  function renderDone() {
+    var first = (data.nome || "").trim().split(" ")[0];
+    var box = el("section", { "class": "panel done" });
+    box.innerHTML = '<div class="check"><svg width="28" height="28" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>';
+    box.appendChild(el("div", { "class": "title", text: "Recebemos" + (first ? ", " + first : "") + "!" }));
+    box.appendChild(el("p", { text: "A Bia e a equipe vão ler tudo e voltar com o plano de captação para o Recife. Se lembrar de mais alguma coisa, é só mandar no WhatsApp." }));
+    var again = el("button", { type: "button", "class": "btn-ghost", text: "Editar e reenviar", style: "margin-top:28px" });
+    again.addEventListener("click", function () { sent = false; current = 0; persist(); render(); });
+    box.appendChild(again);
+    app.appendChild(box);
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
